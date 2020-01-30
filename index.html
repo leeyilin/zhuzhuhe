@@ -4,7 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Our Story</title>
 
-    <link type="text/css" rel="stylesheet" href="./index_files/default.css">
+    
+    <meta http-equiv = "refresh" content = "0.5; url = ./flowerful-heart/index.html" />
+    
+
+  <link type="text/css" rel="stylesheet" href="./index_files/default.css">
     <script type="text/javascript" src="./index_files/jquery.min.js"></script>
     <script type="text/javascript" src="./index_files/jscex.min.js"></script>
     <script type="text/javascript" src="./index_files/jscex-parser.js"></script>
@@ -55,11 +59,11 @@
     }).reduce((a, b) => {
         return a + b;
     }))
-    $("#clock-box-inside-text").html(`${config.names[0]}<span class="STYLE1">与</span> ${config.names[1]}<span class="STYLE1">已经相恋了</span>`)
+    $("#clock-box-inside-text").html(`${config.names[0]}<span class="STYLE1">与</span> ${config.names[1]}<span class="STYLE1">在一起:</span>`)
 </script>
 
 <script>
-    (function () {
+    var func1 = function () {
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
@@ -112,7 +116,7 @@
         var tree = new Tree(canvas[0], width, height, opts);
         var seed = tree.seed;
         var foot = tree.footer;
-        var hold = 1;
+        var hold = 0;
 
         canvas.click(function (e) {
             var offset = canvas.offset(), x, y;
@@ -210,7 +214,8 @@
         }));
 
         runAsync().start();
-    })();
+    };
+    func1();
 </script>
 
 
