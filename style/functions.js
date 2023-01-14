@@ -92,6 +92,8 @@ function timeElapse(c) {
     var e = Date();
     var f = (Date.parse(e) - Date.parse(c)) / 1000;
     var g = Math.floor(f / (3600 * 24));
+    var years = Math.floor(g / 365);
+    g = g % 365;
     f = f % (3600 * 24);
     var b = Math.floor(f / 3600);
     if (b < 10) {
@@ -106,7 +108,7 @@ function timeElapse(c) {
     if (f < 10) {
         f = "0" + f
     }
-    var a = '<span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
+    var a = '<span class="digit">' + years + '</span> years <span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
     $("#elapseClock").html(a)
 }
 function showMessages() {
