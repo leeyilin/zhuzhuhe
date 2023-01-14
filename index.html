@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>若燕不南飞，则大猪南飞</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="LiHe" />
+    <meta name="description" content="Vincy" />
+    <meta http-equiv=“Expires” content=”-1″>
+	<link rel="icon" href="http://www.longxiaotianxia.com/favicon.ico" type="image/x-icon" />
+    <link href="style/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="style/jquery.js"></script>
+    <script type="text/javascript" src="style/garden.js"></script>
+    <script type="text/javascript" src="style/functions.js"></script>
+</head>
+
+<body>
+    <audio controls autoplay>
+        <!--<video src="http://sc.111ttt.com/up/mp3/163352/16A7142C4C48CA6B0D8C5E489C16BF64.mp3" autoplay="autopaly"></video>-->
+        <source src="resources/yiwendingqing.mp3" type="audio/mpeg"/>
+        Your browser does not support the audio element.
+    </audio>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments" style="color:#FF0000;font-size:16px;font-weight:bold;">故事的女主和男主....</span><br /><br />
+                <span class="keyword"/><span class="keyword">Girl u = new Girl("Li He")</span><br />
+                <span class="keyword"/><span class="keyword">Boy i = new Boy("Li Yilin")</span><br />
+                <span class="space"/><span class="comments">//2019年2月14号，我们通过APP USThing在茫茫人海中认识。</span><br />
+                <span class="keyword"/><span class="keyword">i.meet(u)</span><br />
+                <span class="space"/><span class="comments">//2019年2月18号，我们第一次在东港城地铁站见面，那天下了好大的雨🌧️</span><br />
+                <span class="keyword"/><span class="keyword">i.date(u)</span><br />
+                <span class="space"/><span class="comments">//分分合合，我们最终走到了一起。</span><br />
+                <span class="keyword"/><span class="keyword">u.accept(i)</span><br />
+                <span class="space"/><span class="comments">//我们照顾彼此，承诺要共创美好未来。</span><br />
+                <span class="keyword"/><span class="keyword">i.takeCareOf(u)</span><br />
+                <span class="space"/><span class="comments">//2019年6月24号，我们搬进了文石大厦。</span><br />
+                <span class="keyword"/><span class="keyword">we.move(Man_Shek_Building).</span><br />
+                <span class="space"/><span class="comments">//2021年6月18号，我们结婚啦!</span><br />
+                <span class="keyword"/><span class="keyword">will_you_marry_me? True</span><br />
+                <span class="space"/><span class="comments">//2021年10月18号，我们离开香港去新加坡探索~</span><br />
+                <span class="keyword"/><span class="keyword">we.relocate(Singapore)</span><br />
+				<span class="space"/><span class="comments" style="color:#FF0000;font-size:16px;">To be continued....</span><br />
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <span id="textInTheHeart" style="color:rgb(218,37,207);font-size:20px;font-weight:bold;display:none;">贺贺, 我们已经在一起：</span><br /><br />
+                    <div id="messages">
+                        <div id="elapseClock" s2014/4/29tyle="display:none;"></div>
+                    </div>
+                    <!--
+                    <div id="loveu">
+                        click<br/>
+                        <div class="signature">here</div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "你的浏览器不支持 HTML5!<br/>请使用 Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                adjustWordsPosition();
+                startHeartAnimation();
+            }, 10000);
+            
+            //$("#accept").click
+            setTimeout(function(){
+				var strs = "2019-2-14 20:30:00";  //这里设置计时的初始值！
+				var nowTime=new Date();
+				var together = new Date(strs.replace(/-/g,"/"));
+                //$(this).hide();
+                $("#textInTheHeart").show();
+                $("#textInTheHeart").typewriter();
+                $("#elapseClock").show();
+                timeElapse(together);
+                setInterval(function () {
+                    timeElapse(together);
+                }, 500);
+            }, 12000);
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+</body>
+</html>
+
+
+
